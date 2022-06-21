@@ -1,13 +1,14 @@
 ﻿body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Shadows Into Light', cursive;
+    background:  url(./src/background-with-city-for-business-web-site-vector-211330911.jpg);
 }
 
 .navbar {
-    background-color: rgb(181, 216, 255);
+    background-color: rgba(169, 108, 2, 0.603);
 }
 
 .footer {
-    background-color: rgb(181, 216, 255);
+    background-color: rgba(118, 80, 98, 0.963);
 }
 
 @media (min-width: 0px) {
@@ -29,20 +30,20 @@
 }
 
 section.home-page {
-    background: rgb(181, 216, 255);
+    background: rgba(169, 108, 2, 0.637);
     padding: 20px;
     border-radius: 5px;
-    border: 1px solid rgb(175 207 243);
+    border: 1px solid rgb(230, 0, 111);
     position: initial;
 }
 
 div.home-page-icons a {
-    color: rgb(86, 40, 129);
-    background: rgb(181, 216, 255);
+    color: rgb(0, 0, 0);
+    background: rgb(169, 108, 2);
     text-decoration: none;
     padding: 0px 10px;
     border-radius: 5px;
-    border: 1px solid rgb(125, 170, 238);
+    border: 1px solid rgb(230, 0, 111);
     margin: 10px 10px 0px 0px;
     text-align: center;
     display: inline-block;
@@ -58,15 +59,15 @@ div.home-page-icons a {
     }
 
     div.home-page-icons a:hover {
-        background: rgb(96, 123, 153);
+        background: rgb(230, 0, 111 );
         color: white;
     }
 
 aside {
     grid-area: aside;
-    background: rgb(181, 216, 255);
+    background: rgb(169, 108, 2);
     border-radius: 3px;
-    border: 1px solid rgb(175 207 243);
+    border: 1px solid rgb(230, 0, 111);
     position: absolute;
     font-size: 18px;
     top: 103px;
@@ -83,11 +84,11 @@ aside {
             display: block;
             padding: 5px;
             text-decoration: none;
-            color: rgb(86, 40, 129)
+            color: rgb(8, 0, 0)
         }
 
             aside ul a:hover {
-                background: rgb(96, 123, 153);
+                background: rgb(230, 0, 111);
                 color: white;
                 border-radius: 3px;
             }
@@ -134,7 +135,7 @@ a.button {
 }
 
     a.button:hover {
-        background: rgb(96, 123, 153);
+        background: rgb(13, 246, 203);
         color: white;
     }
 
@@ -149,18 +150,18 @@ table {
     }
 
     table tr:nth-child(even) {
-        background-color: #dae9f3;
+        background-color: rgba(181, 35, 35, 0);
     }
 
     table tr:hover {
-        background-color: rgb(173, 204, 240);
+        background-color: rgb(230, 0, 111);
     }
 
     table th {
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: left;
-        background-color: rgb(84, 144, 212);
+        background-color: rgba(181, 35, 35, 0.71);
         color: white;
     }
 
@@ -185,7 +186,7 @@ div.tasks-grid {
 }
 
 div.tasks-grid div.task h1 {
-    background: #eee;
+    background: rgba(181, 35, 35, 0.71);
     padding: 8px 10px;
     border-radius: 2px;
 }
@@ -248,7 +249,7 @@ input.btn {
     padding: 15px 30px;
     border-radius: 10px;
     outline: none;
-    background: #9bcef0;
+    background: rgb(181, 35, 35);;
     width: 100%;
     margin: 0 auto;
     display: block;
