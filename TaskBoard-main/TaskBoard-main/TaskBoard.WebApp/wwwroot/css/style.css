@@ -5,10 +5,13 @@
 
 .navbar {
     background-color: rgba(169, 108, 2, 0.603);
+    
 }
 
 .footer {
     background-color: rgba(118, 80, 98, 0.963);
+    border-radius: 5px;
+    border: 1px solid rgb(230, 0, 111);
 }
 
 @media (min-width: 0px) {

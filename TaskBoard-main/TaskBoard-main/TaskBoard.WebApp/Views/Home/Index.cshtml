@@ -17,7 +17,7 @@
     {
         <h1 class="text-center">Welcome, @this.User.Identity.Name</h1>
         <hr class="hr-2 bg-secondary" />
-        <h4 class="mt-4 text-center">TaskBoard is here for all your tasks.</h4>
+        <h4 class="mt-4 text-center">Your Tasks Here</h4>
     }
     <br />
     <span class="boardSpan">Tasks: <b>@Model.AllTasksCount</b></span>
@@ -45,11 +45,11 @@
         </a>
         <a asp-area="" asp-controller="Tasks" asp-action="Create">
             <span class="icon">✚</span>
-            <span>New Task</span>
+            <span>New </span>
         </a>
         <a asp-area="" asp-controller="Tasks" asp-action="Search">
             <span class="icon">⌕</span>
-            <span>Search Tasks</span>
+            <span>Search </span>
         </a>
     </div>
 }
