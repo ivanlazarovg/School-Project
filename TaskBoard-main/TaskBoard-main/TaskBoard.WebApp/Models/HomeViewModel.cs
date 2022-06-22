@@ -8,5 +8,6 @@ namespace TaskBoard.WebApp.Models
 
         public List<HomeBoardModel> BoardsWithTasksCount { get; init; }
         public int UserTasksCount { get; init; }
+        public int CreatedUsersCount { get; init; }
     }
 }
