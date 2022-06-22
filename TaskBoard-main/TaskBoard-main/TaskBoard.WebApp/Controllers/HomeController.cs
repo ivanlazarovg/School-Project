@@ -6,6 +6,9 @@ using TaskBoard.Data;
 using TaskBoard.WebApp.Models;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
 
 namespace TaskBoard.WebApp.Controllers
 {
@@ -38,6 +41,14 @@ namespace TaskBoard.WebApp.Controllers
 
             var userTasksCount = -1;
 
+            var userStore = new UserStore<User>(dbContext);
+            var hasher = new PasswordHasher<User>();
+            var normalizer = new UpperInvariantLookupNormalizer();
+            var factory = new LoggerFactory();
+            var logger = new Logger<UserManager<User>>(factory);
+            var userManager = new UserManager<User>(
+                userStore, null, hasher, null, null, normalizer, null, null, logger);
+
             if (this.User.Identity.IsAuthenticated)
             {
                 var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
@@ -48,7 +59,8 @@ namespace TaskBoard.WebApp.Controllers
             {
                 AllTasksCount = this.dbContext.Tasks.Count(),
                 BoardsWithTasksCount = tasksCounts,
-                UserTasksCount = userTasksCount
+                UserTasksCount = userTasksCount,
+                CreatedUsersCount = userManager.Users.Count(),
             };
 
             return View(homeModel);
