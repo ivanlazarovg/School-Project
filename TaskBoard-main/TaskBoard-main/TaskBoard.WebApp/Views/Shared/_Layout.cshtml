@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><span>🖹</span>TaskBoard.WebApp</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><span>🖹</span>Your Task App</a>
                 <button class="navbar-toggler" onclick="addClass()" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -33,10 +33,10 @@
                         <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li>
-                        <a class="nav-link" asp-controller="Boards" asp-action="All">Task Board</a>
+                        <a class="nav-link" asp-controller="Boards" asp-action="All">Tasks</a>
                     </li>
                     <li>
-                        <a class="nav-link" asp-controller="Tasks" asp-action="Create">Create Task</a>
+                        <a class="nav-link" asp-controller="Tasks" asp-action="Create">Create </a>
                     </li>
                     <li>
                         <a class="nav-link" asp-controller="Tasks" asp-action="Search">Search</a>
@@ -57,12 +57,12 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; @DateTime.Now.Year - TaskBoard.WebApp
+            &copy; @DateTime.Now.Year - YourTaskApp
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    
     <script src="~/js/addClass.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

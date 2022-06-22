@@ -99,8 +99,10 @@ function add(){
     
     function next(){
         var nextpg = document.getElementById('nextpage');
+       
         nextpg.addEventListener('click', function () {
-          window.location.href="file:///D:/Need%20for%20Speed%20ProStreet/js-apps-workshop-master/proekt/seondpage.html" ;
+          //path here
+          
           console.log("neshtp");
     })
     }
