@@ -1,33 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace TaskBoard.Data
 {
     using static DataConstants;
-
-    public class Task
+    public class Project
     {
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(MaxTaskTitle)]
+        [MaxLength(MaxProjectTitle)]
         public string Title { get; set; }
 
         [Required]
-        [MaxLength(MaxTaskDescription)]
+        [MaxLength(MaxProjectDescription)]
         public string Description { get; set; }
-
-        public DateTime CreatedOn { get; set; }
-
-        public int BoardId { get; set; }
-
-        public Board Board { get; init; }
-
-        [Required]
-        public string OwnerId { get; set; }
-
-        public User Owner { get; init; }
         public IEnumerable<ProjectTask> ProjectTasks { get; set; } = new List<ProjectTask>();
     }
 }

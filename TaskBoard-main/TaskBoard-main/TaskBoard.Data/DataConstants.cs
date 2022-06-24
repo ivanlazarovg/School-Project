@@ -17,5 +17,8 @@
         public const int MaxUserLastName = 15;
 
         public const int MaxKeyword = 50;
+
+        public const int MaxProjectTitle = 70;
+        public const int MaxProjectDescription = 250;
     }
 }

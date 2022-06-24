@@ -23,11 +23,16 @@ namespace TaskBoard.Data
 
         public DbSet<Board> Boards { get; set; }
         public DbSet<Task> Tasks { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<ProjectTask> ProjectTasks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             if (seedDb)
             {
+                builder.Entity<ProjectTask>().HasKey(pt => new { pt.ProjectId, pt.TaskId});
+                builder.Entity<Project>().HasMany(tp => tp.ProjectTasks).WithOne(p => p.Project);
+                builder.Entity<Task>().HasMany(tp => tp.ProjectTasks).WithOne(p => p.Task);
                 builder
                 .Entity<Task>()
                 .HasOne(t => t.Board)
