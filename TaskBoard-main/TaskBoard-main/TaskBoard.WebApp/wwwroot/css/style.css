@@ -1,6 +1,7 @@
 ﻿body {
     font-family: 'Inconsolata', monospace;
-    background:  url(./src/background-with-city-for-business-web-site-vector-211330911.jpg);
+    
+    background-color: rgb(155, 155, 155);
 }
 
 .navbar {

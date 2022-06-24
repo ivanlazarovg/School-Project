@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TaskBoard-main",
+    "\\TaskBoard-main\\TaskBoard-main",
+    "\\TaskBoard-main\\TaskBoard-main\\TaskBoard.DesktopApp"
   ],
-  "SelectedNode": "\\TaskBoard.sln (TaskBoard-main\\TaskBoard-main\\TaskBoard.sln)",
   "PreviewInSolutionExplorer": false
 }
