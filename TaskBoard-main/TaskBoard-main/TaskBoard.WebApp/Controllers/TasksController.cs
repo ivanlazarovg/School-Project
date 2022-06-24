@@ -49,10 +49,7 @@ namespace TaskBoard.WebApp.Controllers
 
         public IActionResult Create()
         {
-            TaskFormModel taskModel = new TaskFormModel()
-            {
-                Boards = GetBoards()
-            };
+            TaskFormModel taskModel = new TaskFormModel();
 
             return View(taskModel);
         }
@@ -60,15 +57,8 @@ namespace TaskBoard.WebApp.Controllers
         [HttpPost]
         public IActionResult Create(TaskFormModel taskModel)
         {
-            if (!GetBoards().Any(b => b.Id == taskModel.BoardId))
-            {
-                this.ModelState.AddModelError(nameof(taskModel.BoardId), "Board does not exist.");
-            }
-
             if (!ModelState.IsValid)
             {
-                taskModel.Boards = GetBoards();
-
                 return View(taskModel);
             }
 
@@ -78,7 +68,7 @@ namespace TaskBoard.WebApp.Controllers
                 Title = taskModel.Title,
                 Description = taskModel.Description,
                 CreatedOn = DateTime.Now,
-                BoardId = taskModel.BoardId,
+                BoardId = dbContext.Boards.FirstOrDefault(b => b.Name == "Open").Id,
                 OwnerId = currentUserId
             };
             this.dbContext.Tasks.Add(task);
