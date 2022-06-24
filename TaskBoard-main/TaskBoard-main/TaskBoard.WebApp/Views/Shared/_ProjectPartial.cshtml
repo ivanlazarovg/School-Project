@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ProjectViewModel>
+
+@foreach (var task in Model)
+{
+    <table class="task-entry">
+        <tbody>
+            <tr class="title">
+                <th>Title</th>
+                <td>@task.Title</td>
+            </tr>
+            <tr class="description">
+                <th>Description</th>
+                <td>
+                    <div class="description">@task.Description</div>
+                </td>
+            </tr>
+            <tr class="actions">
+                <th>Actions</th>
+                <td>
+                    <a asp-controller="Tasks" asp-action="Details" asp-route-id="@task.Id" class="btn btn-secondary mb-2">View</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}
