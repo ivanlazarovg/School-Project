@@ -30,9 +30,17 @@
         }
     </ul>
     <span class="boardSpan">Created Users: <b>@Model.CreatedUsersCount</b></span>
-    @if (Model.UserTasksCount > -1)
+    @if (Model.UserOpenTasksCount > -1)
     {
-        <h5>You have: <b>@Model.UserTasksCount</b> tasks</h5>
+        <h5>You have: <b>@Model.UserOpenTasksCount</b> tasks open</h5>
+    }
+    @if (Model.UserInProgressTasksCount > -1)
+    {
+        <h5>You have: <b>@Model.UserInProgressTasksCount</b> tasks in progress</h5>
+    }
+    @if (Model.UserDoneTasksCount > -1)
+    {
+        <h5>You have: <b>@Model.UserDoneTasksCount</b> tasks done</h5>
     }
 </section>
 

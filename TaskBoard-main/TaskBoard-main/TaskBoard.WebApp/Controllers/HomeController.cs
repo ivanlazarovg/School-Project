@@ -40,6 +40,10 @@ namespace TaskBoard.WebApp.Controllers
             }
 
             var userTasksCount = -1;
+            var userOpenTasksCount = -1;
+            var userInProgressTasksCount = -1;
+            var userDoneTasksCount = -1;
+
 
             var userStore = new UserStore<User>(dbContext);
             var hasher = new PasswordHasher<User>();
@@ -53,6 +57,9 @@ namespace TaskBoard.WebApp.Controllers
             {
                 var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
                 userTasksCount = this.dbContext.Tasks.Where(t => t.OwnerId == currentUserId).Count();
+                userOpenTasksCount = this.dbContext.Tasks.Where(t => t.Board.Name == "Open").Count();
+                userInProgressTasksCount = this.dbContext.Tasks.Where(t => t.Board.Name == "In Progress").Count();
+                userDoneTasksCount = this.dbContext.Tasks.Where(t => t.Board.Name == "Done").Count();
             }
 
             var homeModel = new HomeViewModel()
@@ -61,6 +68,9 @@ namespace TaskBoard.WebApp.Controllers
                 BoardsWithTasksCount = tasksCounts,
                 UserTasksCount = userTasksCount,
                 CreatedUsersCount = userManager.Users.Count(),
+                UserOpenTasksCount = userOpenTasksCount,
+                UserDoneTasksCount = userDoneTasksCount,
+                UserInProgressTasksCount = userInProgressTasksCount,
             };
 
             return View(homeModel);
