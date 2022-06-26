@@ -12,5 +12,6 @@ namespace TaskBoard.WebApp.Models
         public int UserInProgressTasksCount { get; init; }
         public int UserDoneTasksCount { get; init; }
         public int CreatedUsersCount { get; init; }
+        public int TotalProjects { get; init; }
     }
 }

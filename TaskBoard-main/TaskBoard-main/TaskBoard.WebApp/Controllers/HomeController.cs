@@ -45,6 +45,7 @@ namespace TaskBoard.WebApp.Controllers
             var userDoneTasksCount = -1;
 
 
+
             var userStore = new UserStore<User>(dbContext);
             var hasher = new PasswordHasher<User>();
             var normalizer = new UpperInvariantLookupNormalizer();
@@ -62,6 +63,8 @@ namespace TaskBoard.WebApp.Controllers
                 userDoneTasksCount = this.dbContext.Tasks.Where(t => t.Board.Name == "Done").Count();
             }
 
+            int totalProjects = this.dbContext.Projects.Count();
+
             var homeModel = new HomeViewModel()
             {
                 AllTasksCount = this.dbContext.Tasks.Count(),
@@ -71,7 +74,9 @@ namespace TaskBoard.WebApp.Controllers
                 UserOpenTasksCount = userOpenTasksCount,
                 UserDoneTasksCount = userDoneTasksCount,
                 UserInProgressTasksCount = userInProgressTasksCount,
+                TotalProjects = totalProjects,
             };
+
 
             return View(homeModel);
         }

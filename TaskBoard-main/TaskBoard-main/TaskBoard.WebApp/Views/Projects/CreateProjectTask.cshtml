@@ -1,4 +1,4 @@
-﻿<!--Create Task-->
+﻿<!--Create Project Task-->
 @model TaskFormModel
 
 @{
@@ -10,9 +10,9 @@
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
 
-<form asp-action="Create">
-    @await Html.PartialAsync("_TaskFormPartialCreation.cshtml", Model)
-    <input class="btn btn-primary" type="submit" value="Create" />
+<form asp-action="CreateProjectTask">
+    @await Html.PartialAsync("../Tasks/_TaskFormPartialCreation.cshtml", Model)
+    <input class="btn btn-primary" type="submit" value="Create Project Task" />
 </form>
 
 @section Scripts {

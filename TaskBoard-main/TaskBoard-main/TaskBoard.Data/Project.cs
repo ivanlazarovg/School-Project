@@ -13,11 +13,11 @@ namespace TaskBoard.Data
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(MaxProjectTitle)]
+        //[MaxLength(MaxProjectTitle)]
         public string Title { get; set; }
 
         [Required]
-        [MaxLength(MaxProjectDescription)]
+        //[MaxLength(MaxProjectDescription)]
         public string Description { get; set; }
         public IEnumerable<ProjectTask> ProjectTasks { get; set; } = new List<ProjectTask>();
     }

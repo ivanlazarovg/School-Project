@@ -87,8 +87,22 @@ namespace TaskBoard.Data
                         OwnerId = this.GuestUser.Id,
                         BoardId = this.DoneBoard.Id
                     });
+                builder
+                    .Entity<Project>()
+                    .HasData(new Project() {
+                        Description ="A test project", 
+                        Title ="Test Project", 
+                        Id = 1 
+                    },
+                    new Project()
+                    {
+                        Description = "A second Test Project",
+                        Title = "Test Project with a longer description for some reason to test how this works",
+                        Id = 2
+                    });
+
             }
-                
+
             base.OnModelCreating(builder);
         }
 
@@ -128,6 +142,11 @@ namespace TaskBoard.Data
                 Id = 3,
                 Name = "Done"
             };
+        }
+
+        private void SeedProjects()
+        {
+
         }
     }
 }

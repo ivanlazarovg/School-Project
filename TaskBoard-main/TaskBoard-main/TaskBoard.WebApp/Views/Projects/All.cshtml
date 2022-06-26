@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ProjectViewModel>
+﻿<!--projects-->
+@model IEnumerable<ProjectViewModel>
 
   @{
     ViewData["Title"] = "Projects";
@@ -8,17 +9,13 @@
 
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr/>
-div class="tasks-grid">
+<div class="tasks-grid">
     @if (!Model.Any())
     {
         <h3 class="text-center">No projects yet!</h3>
     }
     else
     {
-                @if (Model.Any())
-             {
-                    @await Html.PartialAsync("~/Views/Shared/_ProjectPartial.cshtml", Model);
-           }
-        
+        @await Html.PartialAsync("~/Views/Shared/_ProjectPartial.cshtml", Model);
     }
 </div>

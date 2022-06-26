@@ -61,7 +61,6 @@ namespace TaskBoard.WebApp.Controllers
             {
                 return View(taskModel);
             }
-
             string currentUserId = GetUserId();
             Task task = new Task()
             {
@@ -78,6 +77,7 @@ namespace TaskBoard.WebApp.Controllers
 
             return RedirectToAction("All", "Boards");
         }
+
 
         public IActionResult Edit(int id)
         {

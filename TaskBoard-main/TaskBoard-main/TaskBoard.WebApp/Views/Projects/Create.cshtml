@@ -1,8 +1,8 @@
-﻿<!--Create Task-->
-@model TaskFormModel
+﻿<!--projects create-->
+@model ProjectFormModel
 
 @{
-    ViewBag.Title = "Create Task";
+    ViewBag.Title = "Create Project";
 }
 
 <link href="~/css/style.css" rel="stylesheet" type="text/css" />
@@ -11,7 +11,7 @@
 <hr />
 
 <form asp-action="Create">
-    @await Html.PartialAsync("_TaskFormPartialCreation.cshtml", Model)
+    @await Html.PartialAsync("_ProjectFormPartialCreation.cshtml", Model)
     <input class="btn btn-primary" type="submit" value="Create" />
 </form>
 
