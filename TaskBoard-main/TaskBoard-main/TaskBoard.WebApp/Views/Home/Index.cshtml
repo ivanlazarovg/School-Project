@@ -20,16 +20,7 @@
         <h4 class="mt-4 text-center">Your Tasks Here</h4>
     }
     <br />
-    <span class="boardSpan">Tasks: <b>@Model.AllTasksCount</b></span>
-    <ul>
-        @foreach (var board in Model.BoardsWithTasksCount)
-        {
-            <li>
-                <span class="boardSpan">@board.BoardName: <b>@board.TasksCount</b></span>
-            </li>
-        }
-    </ul>
-    <span class="boardSpan">Created Users: <b>@Model.CreatedUsersCount</b></span>
+    <h5>Created Users: <b>@Model.CreatedUsersCount</b></h5>
     @if (Model.UserOpenTasksCount > -1)
     {
         <h5>You have: <b>@Model.UserOpenTasksCount</b> tasks open</h5>
@@ -48,6 +39,14 @@
 @if (this.User.Identity.IsAuthenticated)
 {
     <div class="home-page-icons">
+        <a asp-area="" asp-controller="Projects" asp-action="All">
+            <span class="icon">🖹</span>
+            <span>Projects</span>
+        </a>
+        <a asp-area="" asp-controller="Projects" asp-action="Create">
+            <span class="icon">✚</span>
+            <span>New Project</span>
+        </a>
         <a asp-area="" asp-controller="Boards">
             <span class="icon">🖹</span>
             <span>Task Board</span>
@@ -59,14 +58,6 @@
         <a asp-area="" asp-controller="Tasks" asp-action="Search">
             <span class="icon">⌕</span>
             <span>Search </span>
-        </a>
-        <a asp-area="" asp-controller="Projects" asp-action="All">
-            <span class="icon">🖹</span>
-            <span>Projects</span>
-        </a>
-        <a asp-area="" asp-controller="Projects" asp-action="Create">
-            <span class="icon">✚</span>
-            <span>New Project</span>
         </a>
     </div>
 }
