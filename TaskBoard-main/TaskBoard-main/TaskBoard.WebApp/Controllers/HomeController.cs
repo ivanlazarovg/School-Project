@@ -58,9 +58,9 @@ namespace TaskBoard.WebApp.Controllers
             {
                 var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
                 userTasksCount = this.dbContext.Tasks.Where(t => t.OwnerId == currentUserId).Count();
-                userOpenTasksCount = this.dbContext.Tasks.Where(t => t.Board.Name == "Open").Count();
-                userInProgressTasksCount = this.dbContext.Tasks.Where(t => t.Board.Name == "In Progress").Count();
-                userDoneTasksCount = this.dbContext.Tasks.Where(t => t.Board.Name == "Done").Count();
+                userOpenTasksCount = this.dbContext.Tasks.Where(t => t.Board.Name == "Open" && t.OwnerId == currentUserId).Count();
+                userInProgressTasksCount = this.dbContext.Tasks.Where(t => t.Board.Name == "In Progress" && t.OwnerId == currentUserId).Count();
+                userDoneTasksCount = this.dbContext.Tasks.Where(t => t.Board.Name == "Done" && t.OwnerId == currentUserId).Count();
             }
 
             int totalProjects = this.dbContext.Projects.Count();

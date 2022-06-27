@@ -19,6 +19,15 @@
         <hr class="hr-2 bg-secondary" />
         <h4 class="mt-4 text-center">Your Tasks Here</h4>
     }
+    <span class="boardSpan">Tasks: <b>@Model.AllTasksCount</b></span>
+    <ul>
+        @foreach (var board in Model.BoardsWithTasksCount)
+        {
+            <li>
+                <span class="boardSpan">@board.BoardName: <b>@board.TasksCount</b></span>
+            </li>
+        }
+    </ul>
     <br />
     <h5>Created Users: <b>@Model.CreatedUsersCount</b></h5>
     @if (Model.UserOpenTasksCount > -1)
